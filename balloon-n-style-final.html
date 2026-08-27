@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon 'n Style | Balloon Decor</title>
+  <meta name="description" content="Bespoke balloon decor for birthdays, weddings, big events and more.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      background: #fff7f9;
+      color: #171217;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 247, 249, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f0dce3;
+    }
+
+    .nav-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      text-align: center;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 7px;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-style: normal;
+      color: #d91d70;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .nav-links a {
+      transition: .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #d91d70;
+    }
+
+    .nav-book {
+      background: #e51c72;
+      color: white !important;
+      padding: 11px 20px;
+      border-radius: 30px;
+      box-shadow: 0 7px 18px rgba(229, 28, 114, .2);
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 90px 20px 75px;
+      background:
+        radial-gradient(circle at 8% 12%, #f6b4ca 0 38px, transparent 39px),
+        radial-gradient(circle at 92% 10%, #171217 0 40px, transparent 41px),
+        radial-gradient(circle at 6% 88%, #e2b06d 0 32px, transparent 33px),
+        radial-gradient(circle at 95% 88%, #ed70a8 0 45px, transparent 46px),
+        linear-gradient(135deg, #fffafb, #ffeef4);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      opacity: .55;
+      filter: blur(1px);
+    }
+
+    .hero::before {
+      top: 25px;
+      left: 13%;
+      background: #e72a78;
+      box-shadow:
+        80px 30px 0 #f7cadb,
+        145px -5px 0 #d9a45f,
+        210px 35px 0 #171217;
+      transform: scale(.18);
+    }
+
+    .hero::after {
+      bottom: 30px;
+      right: 13%;
+      background: #d9a45f;
+      box-shadow:
+        -80px 20px 0 #ed4e94,
+        -145px -5px 0 #171217,
+        -210px 35px 0 #f7cadb;
+      transform: scale(.18);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(780px, 100%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #d91d70;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(50px, 8vw, 86px);
+      line-height: .98;
+      font-weight: 600;
+    }
+
+    h1 em {
+      display: block;
+      color: #d91d70;
+      font-weight: 500;
+      font-size: .76em;
+    }
+
+    .hero p {
+      max-width: 570px;
+      margin: 27px auto;
+      font-size: 17px;
+    }
+
+    .divider {
+      color: #c28b42;
+      margin: 17px 0 25px;
+      font-size: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e51c72;
+      color: white;
+      padding: 13px 27px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(229, 28, 114, .25);
+    }
+
+    /* GENERAL SECTIONS */
+    .section {
+      padding: 82px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 43px;
+    }
+
+    .section-title span {
+      display: block;
+      color: #d91d70;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 6px;
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 5vw, 48px);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .section-title h2 em {
+      color: #d91d70;
+      font-weight: 500;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-card {
+      min-height: 320px;
+      border-radius: 28px;
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 25% 20%, #f2aac5 0 35px, transparent 36px),
+        radial-gradient(circle at 75% 15%, #d9a45f 0 25px, transparent 26px),
+        radial-gradient(circle at 20% 80%, #171217 0 30px, transparent 31px),
+        radial-gradient(circle at 80% 75%, #e82978 0 38px, transparent 39px),
+        #fff0f5;
+      border: 1px solid #f2dce4;
+      box-shadow: 0 18px 45px rgba(100, 30, 60, .08);
+    }
+
+    .about-card strong {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 80px;
+      color: #e51c72;
+    }
+
+    .about-text .label {
+      color: #d91d70;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 9px;
+    }
+
+    .about-text h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 40px;
+      line-height: 1.05;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .about-text h2 em {
+      color: #d91d70;
+    }
+
+    .about-text p {
+      margin: 20px 0 25px;
+      color: #4e4549;
+    }
+
+    .black-btn {
+      display: inline-block;
+      background: #171217;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #fff7f9;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid #efdce3;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(80, 30, 50, .06);
+      transition: transform .2s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-art {
+      height: 145px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 20% 35%, #e91e73 0 30px, transparent 31px),
+        radial-gradient(circle at 43% 25%, #dca660 0 23px, transparent 24px),
+        radial-gradient(circle at 65% 35%, #171217 0 31px, transparent 32px),
+        radial-gradient(circle at 83% 25%, #f3aec7 0 27px, transparent 28px),
+        linear-gradient(135deg, #fff0f5, #f7d5e1);
+    }
+
+    .service-art::after {
+      content: "✦";
+      color: white;
+      background: #e51c72;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      bottom: -21px;
+      font-size: 17px;
+      box-shadow: 0 4px 12px rgba(229,28,114,.2);
+    }
+
+    .service-content {
+      padding: 34px 20px 22px;
+      text-align: center;
+    }
+
+    .service h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #655b60;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .service-link {
+      color: #d91d70;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+      background:
+        radial-gradient(circle at 20% 25%, #e91e73 0 27px, transparent 28px),
+        radial-gradient(circle at 47% 15%, #dca660 0 20px, transparent 21px),
+        radial-gradient(circle at 75% 30%, #171217 0 30px, transparent 31px),
+        radial-gradient(circle at 30% 75%, #f0aac5 0 35px, transparent 36px),
+        radial-gradient(circle at 78% 75%, #e84d94 0 28px, transparent 29px),
+        #281b22;
+      border: 1px solid #ecdbe1;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(4) {
+      background:
+        radial-gradient(circle at 25% 25%, #f5d8df 0 28px, transparent 29px),
+        radial-gradient(circle at 60% 18%, #dca660 0 23px, transparent 24px),
+        radial-gradient(circle at 80% 45%, #fff 0 30px, transparent 31px),
+        radial-gradient(circle at 25% 78%, #e9a9c3 0 32px, transparent 33px),
+        #f3e8ec;
+      color: #b06b91;
+    }
+
+    .gallery-btn {
+      display: block;
+      width: fit-content;
+      margin: 25px auto 0;
+    }
+
+    /* BOOKING */
+    .booking {
+      background: #fff7f9;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .form-card,
+    .custom-card {
+      background: white;
+      border: 1px solid #efdce3;
+      border-radius: 20px;
+      padding: 27px;
+      box-shadow: 0 8px 25px rgba(80, 30, 50, .06);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #eadde2;
+      border-radius: 10px;
+      padding: 13px 14px;
+      background: #fffafb;
+      color: #332b30;
+      font: 13px "DM Sans", Arial, sans-serif;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #e51c72;
+      box-shadow: 0 0 0 3px rgba(229,28,114,.08);
+    }
+
+    .form-btn {
+      grid-column: 1 / -1;
+      border: 0;
+      cursor: pointer;
+      justify-self: center;
+    }
+
+    .custom-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .custom-card .label {
+      color: #d91d70;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .custom-card h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 29px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .custom-card p {
+      color: #62585d;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #171217;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    footer .logo {
+      font-size: 28px;
+    }
+
+    footer .logo small {
+      color: #ed5a99;
+    }
+
+    footer h4 {
+      color: #ed5a99;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    footer p,
+    footer a {
+      color: #c9c0c4;
+      font-size: 13px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #342d31;
+      padding-top: 20px;
+      text-align: center;
+      color: #8d8488;
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        padding: 22px;
+        background: #fff7f9;
+        border-bottom: 1px solid #efdce3;
+        flex-direction: column;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .hero {
+        min-height: 590px;
+        padding-top: 70px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .form-btn {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-card {
+        min-height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        Balloon 'n Style
+        <small>BALLOON DECOR</small>
+      </a>
+
+      <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#work">OUR WORK</a>
+        <a href="#services">SERVICES</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#booking" class="nav-book">BOOK NOW</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">BALLOON DECOR • EVENTS • CELEBRATIONS</div>
+
+        <h1>
+          Bringing your
+          <em>special moments</em>
+          to life ♡
+        </h1>
+
+        <div class="divider">♡ ───────── ♥ ───────── ♡</div>
+
+        <p>
+          Bespoke balloon decor for birthdays, weddings,
+          big events &amp; more.
+        </p>
+
+        <a class="btn" href="#booking">BOOK NOW</a>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+
+        <div class="about-card">
+          <strong>∞</strong>
+        </div>
+
+        <div class="about-text">
+          <div class="label">ABOUT US</div>
+          <h2>
+            We create
+            <em>unforgettable memories ♡</em>
+          </h2>
+
+          <p>
+            We specialise in creating stunning balloon displays
+            for all occasions. From birthdays to weddings and
+            everything in between, we bring creativity, style
+            and love to every event.
+          </p>
+
+          <a class="black-btn" href="#services">LEARN MORE</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+
+        <div class="section-title">
+          <span>OUR SERVICES</span>
+          <h2>How we can help</h2>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service">
+            <div class="service-art"></div>
+            <div class="service-content">
+              <h3>Birthdays</h3>
+              <p>Make their day extra special with custom balloon decor.</p>
+              <a class="service-link" href="#booking">VIEW MORE →</a>
+            </div>
+          </article>
+
+          <article class="service">
+            <div class="service-art"></div>
+            <div class="service-content">
+              <h3>Weddings</h3>
+              <p>Elegant and romantic balloon designs for your big day.</p>
+              <a class="service-link" href="#booking">VIEW MORE →</a>
+            </div>
+          </article>
+
+          <article class="service">
+            <div class="service-art"></div>
+            <div class="service-content">
+              <h3>Big Events</h3>
+              <p>Grand openings, corporate events, parties &amp; more.</p>
+              <a class="service-link" href="#booking">VIEW MORE →</a>
+            </div>
+          </article>
+
+          <article class="service">
+            <div class="service-art"></div>
+            <div class="service-content">
+              <h3>Custom</h3>
+              <p>Have something unique in mind? Let's make it happen.</p>
+              <a class="service-link" href="#booking">VIEW MORE →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="work">
+      <div class="container">
+
+        <div class="section-title">
+          <span>OUR WORK</span>
+          <h2>Gallery ♡</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">Happy Birthday</div>
+          <div class="gallery-item">Bride to be</div>
+          <div class="gallery-item">Happy Birthday</div>
+          <div class="gallery-item">Celebrate</div>
+          <div class="gallery-item">Let's Party</div>
+        </div>
+
+        <a class="btn gallery-btn" href="#booking">VIEW FULL GALLERY</a>
+
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="container">
+
+        <div class="section-title">
+          <span>BOOK WITH US</span>
+          <h2>Let's make your event unforgettable ♡</h2>
+        </div>
+
+        <div class="booking-grid">
+
+          <div class="form-card">
+            <form id="bookingForm" action="https://formspree.io/f/mrpgzjqz" method="POST">
+              <input type="hidden" name="_subject" value="New Balloon Decor Booking Enquiry">
+
+              <div class="field">
+                <input type="text" name="name" placeholder="Full Name" required>
+              </div>
+
+              <div class="field">
+                <input type="email" name="email" placeholder="Email Address" required>
+              </div>
+
+              <div class="field">
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+              </div>
+
+              <div class="field">
+                <select name="event_type" required>
+                  <option value="">Event Type</option>
+                  <option>Birthday</option>
+                  <option>Wedding</option>
+                  <option>Baby Shower</option>
+                  <option>Corporate Event</option>
+                  <option>Party</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <input type="date" name="event_date" required>
+              </div>
+
+              <div class="field full">
+                <textarea name="message" placeholder="Tell us about your event..."></textarea>
+              
+              </div>
+
+              <button class="btn form-btn" type="submit">SEND ENQUIRY</button>
+
+            </form>
+          </div>
+
+          <div class="custom-card" id="contact">
+            <div class="label">CUSTOM OPTION?</div>
+            <h3>Tell us more about your ideas and we'll create something amazing just for you.</h3>
+            <p>
+              Don't see exactly what you're looking for?
+              No problem. We love bringing creative ideas to life.
+            </p>
+            <a class="black-btn" href="#booking">TELL US MORE</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div>
+        <div class="logo">
+          Balloon 'n Style
+          <small>BALLOON DECOR</small>
+        </div>
+        <p style="margin-top:18px;">
+          Bringing your special moments to life ♡
+        </p>
+      </div>
+
+      <div>
+        <h4>QUICK LINKS</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#booking">Book Now</a>
+      </div>
+
+      <div>
+        <h4>CONTACT</h4>
+        <a href="#booking">hello@example.com</a>
+        <a href="tel:+440000000000">+44 0000 000 000</a>
+        <p>Available for events &amp; celebrations.</p>
+      </div>
+
+    </div>
+
+    <div class="container copyright">
+      © 2026 Balloon 'n Style. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+      });
+    });
+
+    // Formspree handles the booking form submission.
+  </script>
+
+
+  <script>
+    const bookingForm = document.getElementById("bookingForm");
+
+    if (bookingForm) {
+      bookingForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const button = bookingForm.querySelector("button[type='submit']");
+        const originalText = button.textContent;
+
+        button.disabled = true;
+        button.textContent = "SENDING...";
+
+        try {
+          const response = await fetch(bookingForm.action, {
+            method: "POST",
+            body: new FormData(bookingForm),
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          if (response.ok) {
+            bookingForm.reset();
+            button.textContent = "ENQUIRY SENT ✓";
+
+            setTimeout(() => {
+              button.disabled = false;
+              button.textContent = originalText;
+            }, 3000);
+          } else {
+            button.disabled = false;
+            button.textContent = originalText;
+            alert("Something went wrong. Please try again.");
+          }
+        } catch (error) {
+          button.disabled = false;
+          button.textContent = originalText;
+          alert("Something went wrong. Please check your connection and try again.");
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
